@@ -87,7 +87,7 @@
 
 /* ===== Haunted Grid Section ===== */
 .haunted-grid-section {
-  background: url('public/black-magic-book.jpg');
+  background: url('/black-magic-book.jpg');
   opacity: 0.95;
   padding: 0;
   margin: 2rem 3rem;

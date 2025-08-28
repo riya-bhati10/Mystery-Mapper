@@ -13,7 +13,7 @@ const Entry = () => {
     <div className="entry-container">
       <div className="entry-overlay">
         <div className="entry-title-wrapper">
-          <img src="/public/skull-with-lightning.png" alt="Skull Icon" className="skull-icon" />
+          <img src="/skull-with-lightning.png" alt="Skull Icon" className="skull-icon" />
            <h1 className="entry-title">
             <span className="first-letter">M</span>YSTERY MAPPER
             <div className="entry-subtitle">EXPLORE MYSTERY PLACES WITH US</div>

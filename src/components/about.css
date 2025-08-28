@@ -1,6 +1,6 @@
 /* ===== HERO SECTION ===== */
 .about-page{
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)) , url("public/about-bg-2.jpg") center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)) , url("/about-bg-2.jpg") center/cover no-repeat;
     background-position: fixed;
 
 }

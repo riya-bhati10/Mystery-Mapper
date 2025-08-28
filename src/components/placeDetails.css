@@ -1,6 +1,6 @@
 /* ====== Main Container ====== */
 .place-details-container {
-  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('public/vempires.avif') center/ cover no-repeat;
+  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('/vempires.avif') center/ cover no-repeat;
   background-attachment: fixed;
   color: #f1f1f1;
   min-height: 100vh;

@@ -10,7 +10,7 @@ html, body {
 
 /* Main explore container */
 .explore-page-container {
-  background: url('public/explore-bg-img-main.jpg') no-repeat center center;
+  background: url('/explore-bg-img-main.jpg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   color: white;
