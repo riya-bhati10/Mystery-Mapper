@@ -1,0 +1,125 @@
+.footer {
+  background: linear-gradient(to top, #000000, #1a1a1a);
+  color: #f2f2f2;
+  padding: 3rem 2rem 1.5rem;
+ font-family: 'Cinzel Decorative', serif;
+ font-weight: 400;
+  text-shadow: 1px 1px 2px black;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-section h2, .footer-section h3 {
+  color: #cc0000;
+  margin-bottom: 1rem;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.footer-section p, .footer-section li {
+  font-size: 0.97rem;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-section ul li:hover {
+  color: #ff3333;
+}
+
+.footer-section input {
+  padding: 0.5rem;
+  width: 80%;
+  margin-bottom: 0.5rem;
+  background-color: #222;
+  color: white;
+  border: 1px solid #ff2c2c;
+  border-radius: 6px;
+}
+
+.footer-section button {
+  background: linear-gradient(45deg, #e02c2c, #6b0e0e);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.footer-section button:hover {
+  background-color: #cc0000;
+}
+
+.footer-fact {
+  text-align: center;
+  font-style: italic;
+  color: #d4d4d4;
+  margin-bottom: 1rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.social-icons {
+  margin-bottom: 0.5rem;
+}
+
+.social-icons i {
+  margin: 0 10px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #ffffffb2;
+}
+
+.social-icons i:hover {
+  color: #ff2c2c;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section input {
+    width: 100%;
+  }
+}

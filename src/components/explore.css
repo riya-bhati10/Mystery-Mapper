@@ -1,0 +1,390 @@
+General layout
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #313436;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100%; 
+}
+
+/* Main explore container */
+.explore-page-container {
+  background: url('public/explore-bg-img-main.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 80px; /* space for fixed navbar */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Make main content grow so footer pushes down */
+.explore-content {
+  flex: 1;
+  padding-bottom: 3rem; /* space before footer */
+}
+
+/* Transparent Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.3); /* Transparent black */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  color: #ff2c2c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar-logo span {
+  color: white;
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar-links li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li:hover {
+  color: #ff2c2c;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    font-family: 'Cinzel Decorative', serif;
+    flex-direction: column;
+    background-color: #111;
+    padding: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    border: 1px solid #ff2c2c;
+    border-radius: 6px;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  gap: 1rem;
+  margin-top: 6rem ;
+ 
+}
+
+.search-section h1 {
+  font-size: 2.3rem;
+   font-family: "Cinzel Decorative", serif;
+  color: #f3e6e6;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ff2c2c;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 50%;
+}
+
+.search-button {
+  background: linear-gradient(45deg, #e02c2c, #6b0e0e);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #e62020;
+}
+
+.static-haunted-section{
+  margin-bottom: 2rem;
+}
+
+.static-haunted-section h2 {
+  font-family: "Creepster", cursive;
+  font-size: 2.5rem;
+  font-weight: 550;
+  margin-bottom: 1.8rem;
+  color: #f13040;
+  text-shadow: 0 0 10px black;
+  text-align: center;
+}
+
+/* 📌 Haunted Places Grid (staggered layout) */
+.haunted-places-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 equal columns for control */
+  gap: 1.5rem;
+  max-height: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+/* First row → 3 items (each spans 2 columns) */
+.haunted-places-grid .haunted-card:nth-child(1) {
+  grid-column: 1 / span 2;
+}
+.haunted-places-grid .haunted-card:nth-child(2) {
+  grid-column: 3 / span 2;
+}
+.haunted-places-grid .haunted-card:nth-child(3) {
+  grid-column: 5 / span 2;
+}
+
+/* Second row → 2 items staggered between */
+.haunted-places-grid .haunted-card:nth-child(4) {
+  grid-column: 2 / span 2; /* falls between Img1 & Img2 */
+  margin-top: 2rem;
+}
+.haunted-places-grid .haunted-card:nth-child(5) {
+  grid-column: 4 / span 2; /* falls between Img2 & Img3 */
+  margin-top: 2rem;
+}
+
+/* 📌 Haunted Card */
+.haunted-card {
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 44, 44, 0.4);
+  border-radius: 12px;
+  height: 300px;
+  padding: 1rem;
+  margin: 0 1rem;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+/* 
+.haunted-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(255, 44, 44, 0.3);
+  border-color: #ff2c2c;
+} */
+
+/* 📌 Haunted Images */
+.haunted-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .haunted-places-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet */
+  }
+  .haunted-places-grid .haunted-card {
+    grid-column: auto !important; /* Reset staggered layout */
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .haunted-places-grid {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+  }
+  .haunted-img {
+    height: 160px;
+  }
+}
+
+
+/* Results Section - Transparent Background */
+.results-container {
+  background: transparent;
+  padding: 40px 20px;
+  margin: 0;
+  /* min-height: 200px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.results-container p {
+  text-align: center;
+  color: #ff6b6b;
+  font-size: 18px;
+  margin: 0;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+/* Places Found Box */
+.places-found-box {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.places-found-box p {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 25px;
+  background: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.places-found-box strong {
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* View Places Button */
+.view-places-button {
+  background: linear-gradient(45deg, #e02c2c, #6b0e0e);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.view-places-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(85, 27, 27, 0.4);
+  background: linear-gradient(45deg, #962828, #791111);
+}
+
+.view-places-button:active {
+  transform: translateY(0);
+}
+
+/* Loading Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* No Results Message */
+.results-container p:not(.places-found-box p) {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #8b4513;
+  color: #d2691e;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .results-container {
+    padding: 20px 10px;
+  }
+  
+  .places-found-box {
+    padding: 20px;
+    margin: 0 10px;
+  }
+  
+  .places-found-box p {
+    font-size: 16px;
+  }
+  
+  .view-places-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+/* 📢 Places Found Message - Legacy (keeping for compatibility) */
+.places-found-container {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem 2rem;
+  margin: 1.5rem auto;
+  border: 1px solid #ff2c2c;
+  border-radius: 8px;
+  max-width: 500px;
+  color: white;
+  font-size: 1.1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
